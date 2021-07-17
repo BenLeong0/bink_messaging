@@ -49,3 +49,42 @@ code {
 .body-text {
   font-size: 14px;
 }
+
+
+.bold {
+  font-weight: bold;
+}
+
+
+.vertical-separation-medium {
+  margin-bottom: var(--vertical-spacing-medium);
+}
+
+.vertical-separation-large {
+  margin-bottom: var(--vertical-spacing-large);
+}
+
+
+.flex-parent {
+  display: flex;
+}
+
+.simple-flex-parent {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.center-flex-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
