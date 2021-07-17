@@ -14,19 +14,26 @@ export default class HttpService {
     constructor() { }
 
 
+    formatQueryParams(queryParams?: QueryParams): string {
+        if (typeof queryParams === "undefined") {
+            return '';
+        }
+
+        let reducer = (accumulator: string, currValue: string[]) => (
+            accumulator + '&' + currValue[0] + '=' + currValue[1]
+        );
+        let queryString =  Object.entries(queryParams).reduce(reducer, '');
+        return '?' + queryString;
+    }
+
+
     async makeGetRequest(res: string, queryParams?: QueryParams): Promise<any> {
         let url = this.API_URL + res;
         let requestOptions = {
             method: "GET"
         };
 
-        if (typeof queryParams !== "undefined") {
-            let reducer = (accumulator: string, currValue: string[]) => (
-                accumulator + '&' + currValue[0] + '=' + currValue[1]
-            );
-            let queryString =  Object.entries(queryParams).reduce(reducer, '');
-            url += '?' + queryString;
-        };
+        url += this.formatQueryParams(queryParams);
 
         let data: any = await fetch(url, requestOptions);
         let resp: any = await data.json();
