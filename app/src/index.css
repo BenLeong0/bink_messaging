@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+p {
+  margin: 0;
+  color: var(--offblack);
+}
+
 
 :root {
   --grey: #CCCCCC;
@@ -62,6 +67,11 @@ code {
 
 .vertical-separation-large {
   margin-bottom: var(--vertical-spacing-large);
+}
+
+
+.width-100 {
+  width: 100%;
 }
 
 
