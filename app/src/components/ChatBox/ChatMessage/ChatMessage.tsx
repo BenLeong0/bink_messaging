@@ -1,14 +1,18 @@
 import React from 'react';
 
-export interface ChatMessageProps {
-    message: string;
+import Message from "../../../Types/Message"
 
+export interface ChatMessageProps {
+    message: Message
 }
 
-const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
+const ChatMessage: React.FC<ChatMessageProps> = ({message}) => {
+
     return (
-        <div className="chatbox-message">
-            {message}
+        <div className="chatmessage">
+            <div className="chatmessage-sender">{message.sender}</div>
+            <div className="chatmessage-text">{message.message}</div>
+            <div className="chatmessage-timestamp">{message.timestamp}</div>
         </div>
      );
 }
