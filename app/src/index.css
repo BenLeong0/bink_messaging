@@ -19,7 +19,8 @@ p {
 
 
 :root {
-  --grey: #CCCCCC;
+  --grey: #BBBBBB;
+  --grey-light: #F5F5F5;
   --offblack: #404040;
 
   --vertical-spacing-extra-small: 5px;
