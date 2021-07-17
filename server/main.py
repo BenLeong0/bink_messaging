@@ -3,7 +3,7 @@ from flask_socketio import SocketIO, send
 
 app = Flask('bink')
 app.config['SECRET_KEY'] = 'a pithy aphorism'
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins='*')
 
 
 @socketio.on("message")
