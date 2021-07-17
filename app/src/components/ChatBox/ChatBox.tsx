@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
+
+import Message, {exampleMessage1, exampleMessage2} from "../../Types/Message"
+
 import ChatMessage from './ChatMessage/ChatMessage';
+import "./ChatBox.css"
 
 export interface ChatBoxProps {
 
 }
 
 const ChatBox: React.FC<ChatBoxProps> = () => {
-    const [messages, setMessages] = useState<string[]>([])
+    const [messages, setMessages] = useState<Message[]>([])
 
     useEffect(() => {
-        setMessages(['yoo', 'wowww'])
+        setMessages([exampleMessage1, exampleMessage2])
     }, []);
 
     return (
