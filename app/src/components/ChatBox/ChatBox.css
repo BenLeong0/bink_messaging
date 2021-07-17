@@ -1,0 +1,12 @@
+.chatbox {
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+    max-width: 800px;
+}
+
+.chatbox-title {
+    font-weight: bold;
+    font-size: 20px;
+}
