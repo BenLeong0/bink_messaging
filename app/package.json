@@ -45,7 +45,11 @@
     }
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "no-useless-constructor": ["off"],
+      "@typescript-eslint/no-useless-constructor": ["off"]
+    }
   },
   "browserslist": {
     "production": [
