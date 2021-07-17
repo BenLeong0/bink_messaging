@@ -4,6 +4,7 @@ import Message, {exampleMessage1, exampleMessage2} from "../../Types/Message"
 
 import ChatMessage from './ChatMessage/ChatMessage';
 import "./ChatBox.css"
+import MessageInput from '../MessageInput/MessageInput';
 
 export interface ChatBoxProps {
 
@@ -22,6 +23,7 @@ const ChatBox: React.FC<ChatBoxProps> = () => {
             <div className="chatmessage-container vertical-separation-medium">
                 {messages.map(message => <ChatMessage message={message} />)}
             </div>
+            <MessageInput />
         </div>
      );
 }
