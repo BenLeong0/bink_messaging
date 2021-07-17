@@ -1,5 +1,7 @@
 import React from 'react';
 
+import "./ChatMessage.css"
+
 import Message from "../../../Types/Message"
 
 export interface ChatMessageProps {
@@ -9,10 +11,10 @@ export interface ChatMessageProps {
 const ChatMessage: React.FC<ChatMessageProps> = ({message}) => {
 
     return (
-        <div className="chatmessage">
-            <div className="chatmessage-sender">{message.sender}</div>
-            <div className="chatmessage-text">{message.message}</div>
-            <div className="chatmessage-timestamp">{message.timestamp}</div>
+        <div className="chatmessage vertical-separation-extra-small">
+            <p className="chatmessage-timestamp body-text">{message.timestamp}</p>
+            <p className="chatmessage-sender body-text">{message.sender}</p>
+            <p className="chatmessage-text body-text">{message.message}</p>
         </div>
      );
 }
