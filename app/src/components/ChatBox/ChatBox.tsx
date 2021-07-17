@@ -17,9 +17,11 @@ const ChatBox: React.FC<ChatBoxProps> = () => {
     }, []);
 
     return (
-        <div className="chatbox">
-            <div className="chatbox-title">Chatbox!</div>
-            {messages.map(message => <ChatMessage message={message} />)}
+        <div className="chatbox flex-parent flex-col">
+            <div className="chatbox-title subtitle-text vertical-separation-large">Chatbox!</div>
+            <div className="chatmessage-container vertical-separation-medium">
+                {messages.map(message => <ChatMessage message={message} />)}
+            </div>
         </div>
      );
 }
