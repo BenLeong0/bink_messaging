@@ -1,16 +1,3 @@
-:root {
-  --grey: #CCCCCC;
-  --offblack: #404040;
-
-  --vertical-spacing-extra-small: 5px;
-  --vertical-spacing-small: 10px;
-  --vertical-spacing-small-medium: 15px;
-  --vertical-spacing-medium: 20px;
-  --vertical-spacing-medium-large: 25px;
-  --vertical-spacing-large: 30px;
-  --vertical-spacing-extra-large: 40px;
-}
-
 .App {
   text-align: center;
 

@@ -11,3 +11,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+:root {
+  --grey: #CCCCCC;
+  --offblack: #404040;
+
+  --vertical-spacing-extra-small: 5px;
+  --vertical-spacing-small: 10px;
+  --vertical-spacing-small-medium: 15px;
+  --vertical-spacing-medium: 20px;
+  --vertical-spacing-medium-large: 25px;
+  --vertical-spacing-large: 30px;
+  --vertical-spacing-extra-large: 40px;
+
+  --horizontal-spacing-extra-small: 5px;
+  --horizontal-spacing-small: 10px;
+  --horizontal-spacing-small-medium: 15px;
+  --horizontal-spacing-medium: 20px;
+  --horizontal-spacing-medium-large: 25px;
+  --horizontal-spacing-large: 30px;
+  --horizontal-spacing-extra-large: 40px;
+
+  --border-radius-small: 5px;
+  --border-radius-medium: 10px;
+}
+
+
+.title-text {
+  font-size: 30px;
+}
+
+.subtitle-text {
+  font-size: 20px;
+}
+
+.body-text {
+  font-size: 14px;
+}
