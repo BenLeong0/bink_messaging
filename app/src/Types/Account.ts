@@ -1,7 +1,15 @@
-export default interface Account {
+export interface AccountInterface {
     username: string | undefined;
 }
 
-export const emptyAccount: Account = {
+export default class Account implements AccountInterface {
+    username: string | undefined;
+
+    constructor(username?: string) {
+        this.username = username;
+    }
+}
+
+export const emptyAccount: AccountInterface = {
     username: undefined,
 }

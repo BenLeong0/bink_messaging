@@ -5,7 +5,7 @@ interface AccountAction {
     payload: Account;
 }
 
-export default function accountReducer(state: Account=emptyAccount, action: AccountAction) {
+export default function accountReducer(state: Account=new Account(), action: AccountAction) {
     switch (action.type) {
         case ("login"):
             return action.payload;
