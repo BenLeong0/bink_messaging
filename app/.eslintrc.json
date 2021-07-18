@@ -36,6 +36,11 @@
         ],
         "@typescript-eslint/no-empty-interface": [
             "warn"
-        ]
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "react/prop-types": "off"
     }
 }
