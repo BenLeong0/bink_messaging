@@ -1,3 +1,39 @@
+# Bink: Frontend app
+
+Written in TypeScript using React, Redux, and Electron
+
+## TODO List
+
+### Foundation
+- [ ] Global vars
+  - [ ] URL (depending on environment)
+- [ ] Redux to store session
+    - [ ] Username
+    - [ ] Auth token
+- [ ] SocketIO
+  - [ ] Connect to server
+  - [ ] Send message capabilities
+- [ ] CSS
+  - [ ] Colour scheme
+  - [ ] Chatbox layout
+
+### Building out
+- [ ] Account system
+- [ ] Main menu
+- [ ] Chat rooms
+  - [ ] Show chat members
+  - [ ] Load old message
+  - [ ] Create new, add people
+- [ ] App setting
+- [ ] Profile details
+
+### Late game
+- [ ] Online indicator
+- [ ] Read receipts
+- [ ] Emojis/Stickers/Gifs
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
