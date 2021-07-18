@@ -35,7 +35,7 @@ const ChatBox: React.FC<ChatBoxProps> = () => {
             <div className="chatmessage-container vertical-separation-medium">
                 {messages.map((message, ind) => <ChatMessage message={message} key={ind} />)}
             </div>
-            <MessageInput />
+            <MessageInput enabled={isLoggedIn}/>
             {!isLoggedIn && <Login />}
         </div>
      );
