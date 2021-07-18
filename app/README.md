@@ -5,6 +5,7 @@ Written in TypeScript using React, Redux, and Electron
 ## TODO List
 
 ### Foundation
+- [ ] Linting
 - [ ] Global vars
   - [ ] URL (depending on environment)
 - [ ] Redux to store session
