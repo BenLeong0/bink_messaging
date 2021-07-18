@@ -9,9 +9,11 @@ export default class AccountService {
         return store.getState();
     }
 
+
     checkIsLoggedIn(): boolean {
         return !(typeof store.getState().username === "undefined");
     }
+
 
     // TODO: Require password
     login(username: string): void {
