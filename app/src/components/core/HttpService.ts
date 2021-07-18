@@ -5,7 +5,23 @@ interface QueryParams {
 
 export default class HttpService {
 
-    API_URL = process.env.REACT_APP_API_URL;
+    API_URL: string;
+
+    constructor() {
+        this.API_URL = this.getAPIURL();
+    }
+
+    getAPIURL(): string {
+        if (process.env.NODE_ENV === "development") {
+            return "localhost:5000";
+        }
+        else if (process.env.NODE_ENV === "production") {
+            return "127.0.0.1:5000";
+        }
+        else {
+            return "localhost:5000";
+        }
+    }
 
 
     formatQueryParams(queryParams: QueryParams | undefined): string {
