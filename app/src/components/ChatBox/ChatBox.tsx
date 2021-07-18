@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import socketIOClient from "socket.io-client";
 
 import Message, { exampleMessage1, exampleMessage2 } from "../../Types/Message";
 
 import store from '../../app/store';
 import AccountService from '../core/AccountService';
+import HttpService from '../core/HttpService';
 
 import "./ChatBox.css";
 import ChatMessage from './ChatMessage/ChatMessage';
@@ -17,16 +19,29 @@ export interface ChatBoxProps {
 
 const ChatBox: React.FC<ChatBoxProps> = () => {
     const accountService = new AccountService();
+    const httpService = new HttpService();
 
-    const [messages, setMessages] = useState<Message[]>([]);
+    const [messages, setMessages] = useState<Message[]>([exampleMessage1, exampleMessage2]);
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(accountService.checkIsLoggedIn());
+
+    const appendMessages = (msg: Message): void => {
+        console.log(messages);
+        setMessages([...messages, msg]);
+    };
 
     store.subscribe(() => {
         setIsLoggedIn(accountService.checkIsLoggedIn());
     });
 
     useEffect(() => {
-        setMessages([exampleMessage1, exampleMessage2]);
+        const socket = socketIOClient(httpService.API_URL);
+        socket.on("connect", function() {
+            socket.send('User has connected!');
+        });
+        socket.on('message', function(msg) {
+            appendMessages(new Message("someone", msg, "18/07/21"));
+            console.log('Received message');
+        });
     }, []);
 
     return (
