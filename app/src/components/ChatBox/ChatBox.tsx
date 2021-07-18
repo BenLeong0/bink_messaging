@@ -33,7 +33,7 @@ const ChatBox: React.FC<ChatBoxProps> = () => {
         <div className="chatbox flex-parent flex-col">
             <div className="chatbox-title subtitle-text vertical-separation-large">Chatbox!</div>
             <div className="chatmessage-container vertical-separation-medium">
-                {messages.map(message => <ChatMessage message={message} />)}
+                {messages.map((message, ind) => <ChatMessage message={message} key={ind} />)}
             </div>
             <MessageInput />
             {!isLoggedIn && <Login />}
