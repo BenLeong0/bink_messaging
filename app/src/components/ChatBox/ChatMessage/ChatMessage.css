@@ -1,0 +1,18 @@
+.chatmessage {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    border-top: 1px solid var(--grey-light);
+}
+
+.chatmessage-timestamp {
+    margin-right: var(--horizontal-spacing-small);
+    color: var(--grey);
+    font-style: italic;
+}
+
+.chatmessage-sender {
+    width: 80px;
+    text-align: left;
+    font-weight: bold;
+}
