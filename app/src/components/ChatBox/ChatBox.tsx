@@ -7,7 +7,7 @@ import AccountService from '../core/AccountService';
 
 import "./ChatBox.css";
 import ChatMessage from './ChatMessage/ChatMessage';
-import MessageInput from '../MessageInput/MessageInput';
+import MessageInput from './MessageInput/MessageInput';
 import Login from '../Login/Login';
 
 
