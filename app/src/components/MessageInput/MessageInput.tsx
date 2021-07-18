@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import "./MessageInput.css"
 
 export interface MessageInputProps {
-
+    enabled: boolean;
 }
 
-const MessageInput: React.FC<MessageInputProps> = () => {
+const MessageInput: React.FC<MessageInputProps> = ({ enabled }) => {
     const [msgText, setMsgText] = useState<string>('')
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -22,8 +22,12 @@ const MessageInput: React.FC<MessageInputProps> = () => {
                 className="messageinput-box"
                 onChange={(e) => setMsgText(e.target.value)}
                 value={msgText}
+                disabled={!enabled}
             />
-            <button type="submit">
+            <button
+                type="submit"
+                disabled={!enabled}
+            >
                 Send
             </button>
         </form>

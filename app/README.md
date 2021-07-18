@@ -8,6 +8,7 @@ Written in TypeScript using React, Redux, and Electron
 - [ ] Linting
 - [ ] Global vars
   - [ ] URL (depending on environment)
+  - [ ] Action types
 - [ ] Redux to store session
     - [ ] Username
     - [ ] Auth token
