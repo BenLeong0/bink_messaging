@@ -1,8 +1,11 @@
-export default interface Message {
+interface Message {
     sender: string;
     message: string;
     timestamp: string;
 };
+
+export default Message;
+
 
 export const emptyMessage: Message = {
     sender: "",
