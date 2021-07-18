@@ -1,3 +1,7 @@
 export default interface Account {
-    username: string;
+    username: string | undefined;
+}
+
+export const emptyAccount: Account = {
+    username: undefined,
 }

@@ -1,17 +1,17 @@
-import Account from "../../Types/Account";
+import Account, { emptyAccount } from "../../Types/Account";
 
 interface AccountAction {
     type: string;
-    payload: Account | undefined;
+    payload: Account;
 }
 
-export default function accountReducer(state: Account | undefined, action: AccountAction) {
+export default function accountReducer(state: Account=emptyAccount, action: AccountAction) {
     switch (action.type) {
         case ("login"):
             return action.payload;
         case ("logout"):
-            return;
+            return emptyAccount;
         default:
-            return;
+            return emptyAccount;
     }
 }
