@@ -23,4 +23,13 @@ export default class AccountService {
         }
         store.dispatch(action)
     }
+
+
+    logout(): void {
+        const action = {
+            type: ACCOUNT_ACTIONS.LOGOUT,
+            payload: new Account()
+        }
+        store.dispatch(action)
+    }
 }
