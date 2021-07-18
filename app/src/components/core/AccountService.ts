@@ -1,6 +1,8 @@
 import store from "../../app/store";
 import Account from "../../Types/Account";
 
+import * as ACCOUNT_ACTIONS from "../../app/currentUser/accountActionTypes"
+
 export default class AccountService {
 
     getAccount(): Account {
@@ -16,7 +18,7 @@ export default class AccountService {
         if (username === "") return;
 
         const action = {
-            type: "login",
+            type: ACCOUNT_ACTIONS.LOGIN,
             payload: new Account(username)
         }
         store.dispatch(action)
