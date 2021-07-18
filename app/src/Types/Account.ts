@@ -9,7 +9,3 @@ export default class Account implements AccountInterface {
         this.username = username;
     }
 }
-
-export const emptyAccount: AccountInterface = {
-    username: undefined,
-}

@@ -1,4 +1,4 @@
-import Account, { emptyAccount } from "../../Types/Account";
+import Account from "../../Types/Account";
 
 interface AccountAction {
     type: string;
@@ -10,8 +10,8 @@ export default function accountReducer(state: Account=new Account(), action: Acc
         case ("login"):
             return action.payload;
         case ("logout"):
-            return emptyAccount;
+            return new Account();
         default:
-            return emptyAccount;
+            return new Account();
     }
 }
