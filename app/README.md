@@ -7,6 +7,7 @@ Written in TypeScript using React, Redux, and Electron
 ### Foundation
 - [ ] Global vars
   - [ ] URL (depending on environment)
+  - [ ] Action types
 - [ ] Redux to store session
     - [ ] Username
     - [ ] Auth token
