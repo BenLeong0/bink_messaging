@@ -15,7 +15,7 @@ export default class AccountService {
     login(username: string): void {
         const action = {
             type: "login",
-            payload: new Account("username")
+            payload: new Account(username)
         }
         store.dispatch(action)
     }
