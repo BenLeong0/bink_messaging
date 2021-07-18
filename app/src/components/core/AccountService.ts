@@ -1,7 +1,7 @@
 import store from "../../app/store";
 import Account from "../../Types/Account";
 
-import * as ACCOUNT_ACTIONS from "../../app/currentUser/accountActionTypes"
+import { login, logout } from "../../app/currentUser/accountActionCreators"
 
 export default class AccountService {
 
@@ -18,20 +18,11 @@ export default class AccountService {
     // TODO: Require password
     login(username: string): void {
         if (username === "") return;
-
-        const action = {
-            type: ACCOUNT_ACTIONS.LOGIN,
-            payload: new Account(username)
-        }
-        store.dispatch(action)
+        store.dispatch(login(username))
     }
 
 
     logout(): void {
-        const action = {
-            type: ACCOUNT_ACTIONS.LOGOUT,
-            payload: new Account()
-        }
-        store.dispatch(action)
+        store.dispatch(logout())
     }
 }
