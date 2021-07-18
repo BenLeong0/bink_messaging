@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-import Message, {exampleMessage1, exampleMessage2} from "../../Types/Message"
+import Message, { exampleMessage1, exampleMessage2 } from "../../Types/Message";
 
 import store from '../../app/store';
 import AccountService from '../core/AccountService';
 
-import "./ChatBox.css"
+import "./ChatBox.css";
 import ChatMessage from './ChatMessage/ChatMessage';
 import MessageInput from '../MessageInput/MessageInput';
 import Login from '../Login/Login';
@@ -18,15 +18,15 @@ export interface ChatBoxProps {
 const ChatBox: React.FC<ChatBoxProps> = () => {
     const accountService = new AccountService();
 
-    const [messages, setMessages] = useState<Message[]>([])
-    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(accountService.checkIsLoggedIn())
+    const [messages, setMessages] = useState<Message[]>([]);
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(accountService.checkIsLoggedIn());
 
     store.subscribe(() => {
-        setIsLoggedIn(accountService.checkIsLoggedIn())
-    })
+        setIsLoggedIn(accountService.checkIsLoggedIn());
+    });
 
     useEffect(() => {
-        setMessages([exampleMessage1, exampleMessage2])
+        setMessages([exampleMessage1, exampleMessage2]);
     }, []);
 
     return (
@@ -38,7 +38,7 @@ const ChatBox: React.FC<ChatBoxProps> = () => {
             <MessageInput enabled={isLoggedIn}/>
             {!isLoggedIn && <Login />}
         </div>
-     );
-}
+    );
+};
 
 export default ChatBox;
