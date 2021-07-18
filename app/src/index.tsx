@@ -10,16 +10,16 @@ import store from './app/store';
 import { Provider } from 'react-redux';
 
 store.subscribe(() => {
-  console.log("Store changed!", store.getState())
-})
+    console.log("Store changed!", store.getState());
+});
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
