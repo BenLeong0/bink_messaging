@@ -1,6 +1,2 @@
-enum ACCOUNT_ACTION_TYPES {
-    LOGIN = "login",
-    LOGOUT = "logout"
-}
-
-export default ACCOUNT_ACTION_TYPES
+export const LOGIN = "login";
+export const LOGOUT = "logout";
