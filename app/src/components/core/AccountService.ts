@@ -7,12 +7,14 @@ export default class AccountService {
         return store.getState();
     }
 
-    isLoggedIn(): boolean {
-        return !(typeof this.getAccount().username === "undefined");
+    checkIsLoggedIn(): boolean {
+        return !(typeof store.getState().username === "undefined");
     }
 
     // TODO: Require password
     login(username: string): void {
+        if (username === "") return;
+
         const action = {
             type: "login",
             payload: new Account(username)
