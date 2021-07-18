@@ -2,15 +2,21 @@ import React, { useEffect, useState } from 'react';
 
 import Message, {exampleMessage1, exampleMessage2} from "../../Types/Message"
 
+import AccountService from '../core/AccountService';
+
 import ChatMessage from './ChatMessage/ChatMessage';
 import "./ChatBox.css"
 import MessageInput from '../MessageInput/MessageInput';
+
+import Login from '../Login/Login';
 
 export interface ChatBoxProps {
 
 }
 
 const ChatBox: React.FC<ChatBoxProps> = () => {
+    const accountService = new AccountService();
+
     const [messages, setMessages] = useState<Message[]>([])
 
     useEffect(() => {
@@ -24,6 +30,7 @@ const ChatBox: React.FC<ChatBoxProps> = () => {
                 {messages.map(message => <ChatMessage message={message} />)}
             </div>
             <MessageInput />
+            {!accountService.isLoggedIn() && <Login />}
         </div>
      );
 }
