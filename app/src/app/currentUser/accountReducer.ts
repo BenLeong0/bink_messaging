@@ -1,5 +1,7 @@
 import Account from "../../Types/Account";
 
+import * as ACCOUNT_ACTIONS from "./accountActionTypes"
+
 interface AccountAction {
     type: string;
     payload: Account;
@@ -7,9 +9,9 @@ interface AccountAction {
 
 export default function accountReducer(state: Account=new Account(), action: AccountAction) {
     switch (action.type) {
-        case ("login"):
+        case (ACCOUNT_ACTIONS.LOGIN):
             return action.payload;
-        case ("logout"):
+        case (ACCOUNT_ACTIONS.LOGOUT):
             return new Account();
         default:
             return new Account();
