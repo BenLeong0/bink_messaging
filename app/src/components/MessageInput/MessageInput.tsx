@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
-import "./MessageInput.css"
+import "./MessageInput.css";
 
 export interface MessageInputProps {
     enabled: boolean;
 }
 
 const MessageInput: React.FC<MessageInputProps> = ({ enabled }) => {
-    const [msgText, setMsgText] = useState<string>('')
+    const [msgText, setMsgText] = useState<string>('');
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-    }
+    };
 
     return (
         <form
@@ -32,6 +32,6 @@ const MessageInput: React.FC<MessageInputProps> = ({ enabled }) => {
             </button>
         </form>
     );
-}
+};
 
 export default MessageInput;

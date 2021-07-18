@@ -1,14 +1,14 @@
 import React from 'react';
 
-import "./ChatMessage.css"
+import "./ChatMessage.css";
 
-import Message from "../../../Types/Message"
+import Message from "../../../Types/Message";
 
 export interface ChatMessageProps {
     message: Message
 }
 
-const ChatMessage: React.FC<ChatMessageProps> = ({message}) => {
+const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
 
     return (
         <div className="chatmessage vertical-separation-extra-small">
@@ -16,7 +16,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({message}) => {
             <p className="chatmessage-sender body-text">{message.sender}</p>
             <p className="chatmessage-text body-text">{message.message}</p>
         </div>
-     );
-}
+    );
+};
 
 export default ChatMessage;
