@@ -6,12 +6,12 @@ import { login, logout } from "../../app/currentUser/accountActionCreators";
 export default class AccountService {
 
     getAccount(): Account {
-        return store.getState();
+        return store.getState().account;
     }
 
 
     checkIsLoggedIn(): boolean {
-        return !(typeof store.getState().username === "undefined");
+        return !(typeof store.getState().account === "undefined");
     }
 
 
