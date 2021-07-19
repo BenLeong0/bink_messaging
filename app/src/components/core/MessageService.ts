@@ -3,7 +3,7 @@ interface QueryParams {
 }
 
 
-export default class HttpService {
+export default class MessageService {
 
     API_URL: string;
 
