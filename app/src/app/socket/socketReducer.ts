@@ -3,12 +3,15 @@ import { Socket } from "socket.io-client";
 
 import * as SOCKET_ACTIONS from "./socketActionTypes";
 
-export default function socketReducer(state: Socket, action: SocketAction): Socket | undefined {
+export default function socketReducer(
+    state: Socket | null=null,
+    action: SocketAction
+): Socket | null {
     switch (action.type) {
     case (SOCKET_ACTIONS.CONNECT):
         return action.payload;
     case (SOCKET_ACTIONS.DISCONNECT):
-        return undefined;
+        return null;
     default:
         return state;
     }

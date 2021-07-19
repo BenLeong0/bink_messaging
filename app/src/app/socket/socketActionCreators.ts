@@ -3,7 +3,7 @@ import * as SOCKET_ACTIONS from "./socketActionTypes";
 
 export interface SocketAction {
     type: string;
-    payload: Socket | undefined
+    payload: Socket | null
 }
 
 export function connect(socket: Socket): SocketAction {
@@ -16,6 +16,6 @@ export function connect(socket: Socket): SocketAction {
 export function disconnect(): SocketAction {
     return {
         type: SOCKET_ACTIONS.DISCONNECT,
-        payload: undefined
+        payload: null
     };
 }
