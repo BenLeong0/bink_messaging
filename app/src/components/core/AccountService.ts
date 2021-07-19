@@ -11,7 +11,7 @@ export default class AccountService {
 
 
     checkIsLoggedIn(): boolean {
-        return !(typeof store.getState().account === "undefined");
+        return store.getState().account !== null;
     }
 
 
