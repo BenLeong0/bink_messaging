@@ -1,10 +1,12 @@
 import { Socket } from "socket.io-client";
 import * as SOCKET_ACTIONS from "./socketActionTypes";
 
+
 export interface SocketAction {
     type: string;
     payload: Socket | null
 }
+
 
 export function connect(socket: Socket): SocketAction {
     return {
@@ -12,6 +14,7 @@ export function connect(socket: Socket): SocketAction {
         payload: socket
     };
 }
+
 
 export function disconnect(): SocketAction {
     return {
