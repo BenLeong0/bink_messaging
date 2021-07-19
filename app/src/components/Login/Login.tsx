@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 
 import AccountService from '../core/AccountService';
 
-export interface LoginProps {
 
-}
-
-const Login: React.FC<LoginProps> = () => {
+const Login: React.FC = () => {
     const accountService = new AccountService();
 
     const [username, setUsername] = useState<string>("");

@@ -11,11 +11,7 @@ import MessageInput from './MessageInput/MessageInput';
 import Login from '../Login/Login';
 
 
-export interface ChatBoxProps {
-
-}
-
-const ChatBox: React.FC<ChatBoxProps> = () => {
+const ChatBox: React.FC = () => {
     const accountService = new AccountService();
 
     const [messages, setMessages] = useState<Message[]>([]);
