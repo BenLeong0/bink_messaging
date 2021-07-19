@@ -8,6 +8,7 @@
 <body>
     <script type="text/javascript">
         $(document).ready(function() {
+            $('#sendMessage').submit((e) => e.preventDefault());
 
             var socket = io.connect('http://127.0.0.1:5000');
 
@@ -28,7 +29,9 @@
         });
     </script>
     <ul id="messages"></ul>
-    <input type="text" id="myMessage">
-    <button id="sendbutton">Send</button>
+    <form id="sendMessage">
+        <input type="text" id="myMessage">
+        <button type="submit" id="sendbutton">Send</button>
+    </form>
 </body>
 </html>
