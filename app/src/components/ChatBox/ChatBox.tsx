@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-import Message, { exampleMessage1, exampleMessage2 } from "../../Types/Message";
+import Message from "../../Types/Message";
 
 import store from '../../app/store';
 import AccountService from '../core/AccountService';
@@ -18,12 +18,9 @@ const ChatBox: React.FC = () => {
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(accountService.checkIsLoggedIn());
 
     store.subscribe(() => {
+        setMessages(store.getState().messages);
         setIsLoggedIn(accountService.checkIsLoggedIn());
     });
-
-    useEffect(() => {
-        setMessages([exampleMessage1, exampleMessage2]);
-    }, []);
 
     return (
         <div className="chatbox flex-parent flex-col">
