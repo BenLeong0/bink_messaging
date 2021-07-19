@@ -1,10 +1,13 @@
 import Account from "../../Types/Account";
+
 import * as ACCOUNT_ACTIONS from "./accountActionTypes";
+
 
 export interface AccountAction {
     type: string;
     payload: Account | null
 }
+
 
 export function login(username: string): AccountAction {
     return {
@@ -13,7 +16,8 @@ export function login(username: string): AccountAction {
     };
 }
 
-export function logout(): AccountAction {
+export
+function logout(): AccountAction {
     return {
         type: ACCOUNT_ACTIONS.LOGOUT,
         payload: null
