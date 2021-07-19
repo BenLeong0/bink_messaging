@@ -5,7 +5,7 @@ import * as ACCOUNT_ACTIONS from "./accountActionTypes";
 
 export interface AccountAction {
     type: string;
-    payload: Account
+    payload: Account | null
 }
 
 
@@ -20,6 +20,6 @@ export
 function logout(): AccountAction {
     return {
         type: ACCOUNT_ACTIONS.LOGOUT,
-        payload: new Account()
+        payload: null
     };
 }
