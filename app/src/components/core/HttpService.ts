@@ -5,13 +5,14 @@ interface QueryParams {
 
 export default class HttpService {
 
-    // TODO: Get URL etc from redux
-    url = "localhost";
-    stage = "/dev";
-    API_URL: string = this.url + this.stage;
+    API_URL: string;
+
+    constructor() {
+        this.API_URL = process.env.NODE_ENV === "production" ? "127.0.0.1:5000" : "localhost:5000";
+    }
 
 
-    formatQueryParams(queryParams?: QueryParams): string {
+    formatQueryParams(queryParams: QueryParams | undefined): string {
         if (typeof queryParams === "undefined") {
             return '';
         }
@@ -32,7 +33,7 @@ export default class HttpService {
 
         url += this.formatQueryParams(queryParams);
 
-        const data: any = await fetch(url, requestOptions);
+        const data: Response = await fetch(url, requestOptions);
         const resp: any = await data.json();
         return resp;
     }
@@ -50,7 +51,7 @@ export default class HttpService {
             body: JSON.stringify(body),
         };
 
-        const data: any = await fetch(url, requestOptions);
+        const data: Response = await fetch(url, requestOptions);
         const resp: any = await data.json();
         return resp;
     }
@@ -68,7 +69,7 @@ export default class HttpService {
             body: JSON.stringify(body),
         };
 
-        const data: any = await fetch(url, requestOptions);
+        const data: Response = await fetch(url, requestOptions);
         const resp: any = await data.json();
         return resp;
     }
@@ -86,8 +87,9 @@ export default class HttpService {
             body: JSON.stringify(body),
         };
 
-        const data: any = await fetch(url, requestOptions);
+        const data: Response = await fetch(url, requestOptions);
         const resp: any = await data.json();
         return resp;
     }
+
 }
