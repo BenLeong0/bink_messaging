@@ -1,4 +1,8 @@
 import { Socket } from "socket.io-client";
+
+import Message from "../../Types/Message";
+import { append } from "../../app/messages/messageActionCreators";
+
 import store from "../../app/store";
 
 export default class MessageService {
@@ -22,6 +26,11 @@ export default class MessageService {
         }
 
         socket.send(message);
+    }
+
+    appendMessage(message: string): void {
+        const newMessage = new Message(message);
+        store.dispatch(append(newMessage));
     }
 
 }
