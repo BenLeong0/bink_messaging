@@ -8,20 +8,7 @@ export default class HttpService {
     API_URL: string;
 
     constructor() {
-        this.API_URL = this.getAPIURL();
-    }
-
-
-    getAPIURL(): string {
-        if (process.env.NODE_ENV === "development") {
-            return "localhost:5000";
-        }
-        else if (process.env.NODE_ENV === "production") {
-            return "127.0.0.1:5000";
-        }
-        else {
-            return "localhost:5000";
-        }
+        this.API_URL = process.env.NODE_ENV === "production" ? "127.0.0.1:5000" : "localhost:5000";
     }
 
 
