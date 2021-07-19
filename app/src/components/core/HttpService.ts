@@ -5,10 +5,24 @@ interface QueryParams {
 
 export default class HttpService {
 
-    // TODO: Get URL etc from redux
-    url = "localhost";
-    stage = "/dev";
-    API_URL: string = this.url + this.stage;
+    API_URL: string;
+
+    constructor() {
+        this.API_URL = this.getAPIURL();
+    }
+
+
+    getAPIURL(): string {
+        if (process.env.NODE_ENV === "development") {
+            return "localhost:5000";
+        }
+        else if (process.env.NODE_ENV === "production") {
+            return "127.0.0.1:5000";
+        }
+        else {
+            return "localhost:5000";
+        }
+    }
 
 
     formatQueryParams(queryParams?: QueryParams): string {
@@ -90,4 +104,5 @@ export default class HttpService {
         const resp: any = await data.json();
         return resp;
     }
+
 }
