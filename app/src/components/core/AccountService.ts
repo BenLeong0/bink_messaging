@@ -5,7 +5,7 @@ import { login, logout } from "../../app/currentUser/accountActionCreators";
 
 export default class AccountService {
 
-    getAccount(): Account {
+    getAccount(): Account | null {
         return store.getState().account;
     }
 
