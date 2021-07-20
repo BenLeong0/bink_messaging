@@ -8,6 +8,10 @@ export default function socketReducer(
     state: Socket | null=null,
     action: SocketAction
 ): Socket | null {
+    if (state !== null) {
+        state.disconnect();
+    }
+
     switch (action.type) {
     case (SOCKET_ACTIONS.CONNECT):
         return action.payload;
