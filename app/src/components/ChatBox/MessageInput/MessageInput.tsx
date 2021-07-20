@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
-
 import "./MessageInput.css";
+
+import MessageService from '../../core/MessageService';
+
 
 export interface MessageInputProps {
     enabled: boolean;
 }
 
 const MessageInput: React.FC<MessageInputProps> = ({ enabled }) => {
+    const messageService = new MessageService();
+
     const [msgText, setMsgText] = useState<string>('');
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+
+        messageService.sendMessage(msgText);
+        setMsgText('');
     };
 
     return (
