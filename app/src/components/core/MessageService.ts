@@ -17,6 +17,7 @@ export default class MessageService {
         return store.getState().socket;
     }
 
+
     sendMessage(message: string): void {
         const socket = this.getSocket();
 
@@ -27,6 +28,7 @@ export default class MessageService {
 
         socket.send(message);
     }
+
 
     appendMessage(message: string): void {
         const newMessage = new Message(message);
