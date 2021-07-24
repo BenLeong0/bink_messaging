@@ -47,7 +47,7 @@ export default class MessageService {
 
 
     appendMessage(message: string): void {
-        const newMessage = new Message(message);
+        const newMessage: Message = JSON.parse(message);
         store.dispatch(append(newMessage));
     }
 
