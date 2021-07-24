@@ -28,6 +28,9 @@ Written in TypeScript using React, Redux, and Electron
   - [ ] Create new, add people
 - [ ] App setting
 - [ ] Profile details
+- [ ] Date parsing
+  - Show time if same day
+  - Else show date
 
 ### Late game
 - [ ] Online indicator
