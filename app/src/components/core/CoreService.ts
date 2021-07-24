@@ -78,4 +78,10 @@ export default class CoreService {
             strTime
         );
     }
+
+
+    getCurrentTimestamp(): string {
+        const currentTime = new Date();
+        return this.formatDate(currentTime);
+    }
 }
