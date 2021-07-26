@@ -1,0 +1,10 @@
+yarn create react-app app --template redux-typescript
+yarn add -D concurrently electron electron-builder wait-on cross-env
+yarn add @reduxjs/toolkit
+yarn add socket.io-client @types/socket.io-client
+yarn add @types/electron-devtools-installer electron-devtools-installer electron-is-dev electron-reload
+yarn add eslint
+yarn add eslint-react-plugin @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
+# DON'T: yarn run eslint --init (generates package-lock.json ie uses npm)
+yarn add @types/react @types/react-dom @types/react-redux
+yarn add electron-packager
